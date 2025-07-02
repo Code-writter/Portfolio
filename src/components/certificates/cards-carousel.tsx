@@ -24,7 +24,6 @@ interface CarouselProps {
 type Card = {
   src: string;
   title: string;
-  category: string;
   content: React.ReactNode;
 };
 
@@ -200,7 +199,7 @@ export const Card = ({
                 layoutId={layout ? `category-${card.title}` : undefined}
                 className="text-base font-medium text-black dark:text-white"
               >
-                {card.category}
+                {card.title}
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
@@ -220,10 +219,10 @@ export const Card = ({
       >
         <div className="relative z-40 p-4 w-full h-full flex flex-col items-center justify-center">
           <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
+            layoutId={layout ? `category-${card.title}` : undefined}
             className="text-center font-sans text-xs font-medium text-gray-700 md:text-sm mb-2"
           >
-            {card.category}
+            {card.title}
           </motion.p>
           <div className="flex-1 flex items-center justify-center w-full">
             <BlurImage
