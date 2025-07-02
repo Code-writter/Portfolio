@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
-// import { LogoCloud } from './logo-cloud'
+import { Welcome } from './Herosection/welcome'
 
 const transitionVariants = {
     item: {
@@ -35,13 +35,7 @@ export default function HeroSection() {
                 <section>
                     <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-32 lg:pt-48">
                         <div className="relative z-10 mx-auto max-w-4xl text-center">
-                            <TextEffect
-                                preset="fade-in-blur"
-                                speedSegment={0.3}
-                                as="h1"
-                                className="text-balance text-5xl font-medium md:text-6xl">
-                                Welcome to my Portfolio
-                            </TextEffect>
+                            <Welcome />
                             <TextEffect
                                 per="line"
                                 preset="fade-in-blur"
