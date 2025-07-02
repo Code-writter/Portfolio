@@ -1,7 +1,7 @@
 import HeroSection from "@/components/hero-section";
 import Footer from "@/components/footer";
 import Features from "@/components/features";
-import { CardHoverEffectDemo } from "@/components/profiles";
+import { Profiles } from "@/components/profiles";
 import {Certificates} from "@/components/certificates/certificates";
 import {Projects} from "@/components/projects/projects";
 import Socials from "@/components/socials";
@@ -16,7 +16,7 @@ export default function App() {
         {/* About Me */}
         <Features />
         {/*Skills  */}
-        <CardHoverEffectDemo />
+        <Profiles />
         {/* Certificates */}
         <Certificates />
         {/* Projects */}

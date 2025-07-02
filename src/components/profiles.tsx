@@ -2,48 +2,54 @@
 
 import { HoverEffect } from "./ui/card-hover-effect";
 
-export function CardHoverEffectDemo() {
+export function Profiles() {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div className="max-w-5xl mx-auto px-4  ">
       <HoverEffect items={projects} />
     </div>
   );
 }
 export const projects = [
   {
-    title: "Stripe",
+    title: "LinkedIn",
+    logo : "/linkedin-svgrepo-com.svg",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Let's connect on LinkedIn.",
+    link: "https://linkedin.com/in/abhishektiwari007",
   },
   {
-    title: "Netflix",
+    title: "GitHub",
+    logo : "/icons8-github.svg",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "Let's connect on GitHub.",
+    link: "https://github.com/Code-writter",
   },
   {
-    title: "Google",
+    title: "Twitter",
+    logo : "/twitter-logo.svg",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "Let's connect on Twitter.",
+    link: "https://twitter.com/abhishektiwari007",
   },
   {
-    title: "Meta",
+    title: "Microsoft Learn",
+    logo : "/64px-Microsoft_logo.svg.png",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Check profile on Microsoft Learn.",
+    link: "https://learn.microsoft.com/en-us/users/me/?tab=credentials-tab",
   },
   {
-    title: "Amazon",
+    title: "Cloud Skill Boost",
+    logo : "/google-cloud-1.svg",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "Check profile on Cloud Skill Boost.",
+    link: "https://www.cloudskillsboost.google/public_profiles/e34684f1-b0dc-4e22-978c-c4262c750b6e",
   },
   {
-    title: "Microsoft",
+    title: "Credly",
+    logo : "/credly-svgrepo-com.svg",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+      "Check profile on Credly.",
+    link: "https://www.credly.com/users/abhishektiwari.007",
   },
 ];

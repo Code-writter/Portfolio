@@ -9,6 +9,7 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
+    logo : string;
     description: string;
     link: string;
   }[];
@@ -51,6 +52,7 @@ export const HoverEffect = ({
           <Card>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            <CardLogo>{item.logo}</CardLogo>
           </Card>
         </a>
       ))}
@@ -72,8 +74,10 @@ export const Card = ({
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-50 h-full">
+        <div className="p-4 h-full flex flex-col">
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -107,5 +111,37 @@ export const CardDescription = ({
     >
       {children}
     </p>
+  );
+};
+export const CardLogo = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  const logoPath = children as string;
+  const needsWhiteBg = [
+    'github',
+    'twitter',
+    'linkedin',
+    'x-logo'
+  ].some(platform => logoPath.toLowerCase().includes(platform));
+
+  return (
+    <div className={cn(
+      "absolute top-3 right-3 w-10 h-10 flex items-center justify-center overflow-hidden",
+      needsWhiteBg && "bg-white p-1",
+      className
+    )}>
+      <img 
+        src={logoPath} 
+        alt="" 
+        className={cn(
+          "w-[180%] h-[180%] object-contain",
+          needsWhiteBg && "p-0"
+        )}
+      />
+    </div>
   );
 };
