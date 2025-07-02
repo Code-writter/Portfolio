@@ -4,10 +4,20 @@ import { Calendar, LucideIcon, MapIcon } from 'lucide-react'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 
+import { TextEffect } from '@/components/ui/text-effect';
+
 export default function Features() {
     return (
         <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-5xl">
+                <TextEffect
+                    preset="fade-in-blur"
+                    speedSegment={0.3}
+                    as="h2"
+                    className="text-3xl font-bold text-center mb-12 md:text-4xl"
+                >
+                    About Me
+                </TextEffect>
                 <div className="mx-auto grid gap-4 lg:grid-cols-2">
                     <FeatureCard>
                         <CardHeader className="pb-3">
