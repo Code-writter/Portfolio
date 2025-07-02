@@ -7,85 +7,169 @@ export function Certificates() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
-// NOTE: Height can be changed
   return (
-    <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        Get to know your iSad.
+    <div className="w-full h-full py-12">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans mb-8 text-center">
+        Certifications & Achievements
       </h2>
       <Carousel items={cards} />
     </div>
   );
 }
 
-const CertificateContent = () => {
+const CertificateContent = ({ logo }: { logo: string }) => {
   return (
-    <>
-      {[...new Array(3).fill(1)].map((_, index) => {
-        return (
-          <div
-            key={"dummy-content" + index}
-            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-          >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                The first rule of Apple club is that you boast about Apple club.
-              </span>{" "}
-              Keep a journal, quickly jot down a grocery list, and take amazing
-              class notes. Want to convert those notes to text? No problem.
-              Langotiya jeetu ka mara hua yaar is ready to capture every
-              thought.
-            </p>
-            <img
-              src="https://assets.aceternity.com/macbook.png"
-              alt="Macbook mockup from Aceternity UI"
-              height="500"
-              width="500"
-              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+    <div className="flex flex-col items-center justify-center w-full h-full bg-white p-4 text-center">
+      <div className="flex-1 flex items-center justify-center">
+        <img 
+          src={logo} 
+          alt="Certificate Logo" 
+          className="max-h-[80px] w-auto object-contain"
+        />
+      </div>
+    </div>
+  );
+};
+
+const MicrosoftCertificates = () => {
+  return (
+    <div className="w-full h-full p-6 overflow-y-auto">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-white">Microsoft Certifications</h3>
+          <p className="text-gray-300 mt-2">Professional achievements in Microsoft technologies</p>
+        </div>
+        
+        <div className="space-y-8">
+          <div className="bg-gray-900 p-6 rounded-lg">
+            <h4 className="text-lg font-semibold text-white mb-4">AI-102: Microsoft Azure AI Engineer Associate</h4>
+            <div className="flex justify-center">
+              <img 
+                src="/certificates/AI-102.png" 
+                alt="AI-102 Certificate"
+                 
+                className="max-w-full h-auto border border-gray-700 rounded shadow-lg"
+              />
+            </div>
+          </div>
+          
+          <div className="bg-gray-900 p-6 rounded-lg">
+            <h4 className="text-lg font-semibold text-white mb-4">AI-900: Microsoft Azure AI Fundamentals</h4>
+            <div className="flex justify-center">
+              <img 
+                src="/certificates/AI-900.png" 
+                alt="AI-900 Certificate" 
+                className="max-w-full h-auto border border-gray-700 rounded shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const GoogleCloudCertificates = () => {
+  return (
+    <div className="w-full h-full p-6 overflow-y-auto">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-white">Google Cloud Certifications</h3>
+          <p className="text-gray-300 mt-2">Professional achievements in Google Cloud technologies</p>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h4 className="text-lg font-semibold text-white mb-4">Google Data Analytics Professional Certificate</h4>
+          <div className="flex justify-center">
+            <img 
+              src="/certificates/google-data-analyst.png" 
+              alt="Google Data Analyst Certificate" 
+              className="max-w-full h-auto border border-gray-700 rounded shadow-lg"
             />
           </div>
-        );
-      })}
-    </>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const UdemyCertificates = () => {
+  return (
+    <div className="w-full h-full p-6 overflow-y-auto">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-white">Udemy Courses</h3>
+          <p className="text-gray-300 mt-2">Professional development through online learning</p>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h4 className="text-lg font-semibold text-white mb-4">Git for Beginners: Learn Git Version Control</h4>
+          <div className="flex justify-center">
+            <img 
+              src="/certificates/git_for_beginners.png" 
+              alt="Git for Beginners Certificate" 
+              className="max-w-full h-auto border border-gray-700 rounded shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AllCertificates = () => {
+  return (
+    <div className="w-full h-full p-6 overflow-y-auto">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-white">Web Development Certificates</h3>
+          <p className="text-gray-300 mt-2">Comprehensive web development achievements</p>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h4 className="text-lg font-semibold text-white mb-4">Web Development Professional Certificate</h4>
+          <div className="flex justify-center">
+            <img 
+              src="/certificates/WebDev.png" 
+              alt="Web Development Certificate" 
+              className="max-w-full h-auto border border-gray-700 rounded shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 const data = [
   {
-    category: "Artificial Intelligence",
-    title: "You can do more with AI.",
-    src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
+    title: "Microsoft Certified",
+    src: "/Microsoft_Logo.svg",
+    logo: "/Microsoft_Logo.svg",
+    content: <MicrosoftCertificates />,
   },
   {
-    category: "Productivity",
-    title: "Enhance your productivity.",
-    src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
+    title: "Google Cloud Certificates",
+    src: "/google-cloud-1.svg",
+    logo: "/google-cloud-1.svg",
+    content: <GoogleCloudCertificates />,
   },
   {
-    category: "Product",
-    title: "Launching the new Apple Vision Pro.",
-    src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
-  },
-
-  {
-    category: "Product",
-    title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
+    title: "Udemy Certificates",
+    src: "/udemy-3.svg",
+    logo: "/udemy-3.svg",
+    content: <UdemyCertificates />,
   },
   {
-    category: "iOS",
-    title: "Photography just got better.",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
+    title: "Coursera Certificates",
+    src: "/Coursera--Streamline-Svg-Logos.svg",
+    logo: "/Coursera--Streamline-Svg-Logos.svg",
+    content: <CertificateContent logo="/Coursera--Streamline-Svg-Logos.svg" />,
   },
   {
-    category: "Hiring",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <CertificateContent />,
+    title: "All Certificates",
+    src: "/certificate-medal-svgrepo-com.svg",
+    logo: "/certificate-medal-svgrepo-com.svg",
+    content: <AllCertificates />,
   },
 ];

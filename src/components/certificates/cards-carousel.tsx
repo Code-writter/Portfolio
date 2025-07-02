@@ -70,16 +70,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   };
 
   const handleCardClose = (index: number) => {
-    if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
-      const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-      setCurrentIndex(index);
-    }
+    // Prevent carousel movement when a card is clicked
+    setCurrentIndex(index);
   };
 
   const isMobile = () => {
@@ -132,22 +124,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               </motion.div>
             ))}
           </div>
-        </div>
-        <div className="mr-10 flex justify-end gap-2">
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-          </button>
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-          </button>
         </div>
       </div>
     </CarouselContext.Provider>
@@ -240,29 +216,31 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-64 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-80 dark:bg-neutral-900"
+        className="relative z-10 flex h-48 w-48 flex-col items-center justify-center overflow-hidden rounded-2xl bg-white shadow-md md:h-56 md:w-56"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
+        <div className="relative z-40 p-4 w-full h-full flex flex-col items-center justify-center">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-center font-sans text-xs font-medium text-gray-700 md:text-sm mb-2"
           >
             {card.category}
           </motion.p>
+          <div className="flex-1 flex items-center justify-center w-full">
+            <BlurImage
+              src={card.src}
+              alt={card.title}
+              width={80}
+              height={80}
+              className="w-auto h-16 md:h-20 object-contain"
+            />
+          </div>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 text-center font-sans text-sm font-medium text-gray-900 md:text-base [text-wrap:balance]"
           >
             {card.title}
           </motion.p>
         </div>
-        <BlurImage
-          src={card.src}
-          alt={card.title}
-          fill
-          className="absolute inset-0 z-10 object-cover"
-        />
       </motion.button>
     </>
   );
