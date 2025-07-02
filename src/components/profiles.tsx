@@ -33,7 +33,7 @@ export const projects = [
   },
   {
     title: "Microsoft Learn",
-    logo : "/64px-Microsoft_logo.svg.png",
+    logo : "/Microsoft_Logo.svg",
     description:
       "Check profile on Microsoft Learn.",
     link: "https://learn.microsoft.com/en-us/users/me/?tab=credentials-tab",
